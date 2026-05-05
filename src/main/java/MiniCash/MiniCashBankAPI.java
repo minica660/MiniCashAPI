@@ -25,6 +25,9 @@ public interface MiniCashBankAPI {
 
     CompletableFuture<BankAPIResult<PlayerData>> getStatus(UUID uuid);
 
+    CompletableFuture<BankAPIResult<PlayerData>> pay(UUID fromUUID,UUID toUUID,String user, int amount, String pluginName);
+
+
 
 
 }
