@@ -14,9 +14,9 @@ public interface MiniCashBankAPI {
 
 
     CompletableFuture<BankAPIResult<PlayerData>> getBalance(UUID uuid);
-    CompletableFuture<BankAPIResult<PlayerData>> getEmoney(UUID uuid);
-    CompletableFuture<BankAPIResult<PlayerData>> getBank(UUID uuid);
-    CompletableFuture<BankAPIResult<PlayerData>> getPoint(UUID uuid);
+    CompletableFuture<BankAPIResult<Integer>> getEmoney(UUID uuid);
+    CompletableFuture<BankAPIResult<Integer>> getBank(UUID uuid);
+    CompletableFuture<BankAPIResult<Integer>> getPoint(UUID uuid);
     CompletableFuture<BankAPIResult<PlayerData>> getPlayerLog(UUID uuid,String user,String pluginName);
     CompletableFuture<BankAPIResult<PlayerData>> getLog(UUID uuid,String user,String pluginName);
 
@@ -37,6 +37,8 @@ public interface MiniCashBankAPI {
 
 
     CompletableFuture<BankAPIResult<PayResponseDTO>> pay(UUID fromUUID,UUID toUUID,String user, int amount, String pluginName);
+
+
 
 
 
