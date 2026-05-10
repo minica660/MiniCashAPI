@@ -8,7 +8,7 @@ import java.util.concurrent.CompletableFuture;
 
 public interface MiniCashBankAPI {
 
-    CompletableFuture<BankAPIResult<Boolean>> has(UUID uuid);
+    CompletableFuture<Boolean> has(UUID uuid);
 
     CompletableFuture<BankAPIResult<PlayerData>> addTable(OfflinePlayer player,String user,String pluginName);
 
