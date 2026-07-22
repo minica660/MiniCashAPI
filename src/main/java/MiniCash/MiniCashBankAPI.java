@@ -8,6 +8,16 @@ import java.util.concurrent.CompletableFuture;
 
 public interface MiniCashBankAPI {
 
+//    @Override
+//    public void onEnable() {
+//        // Plugin startup logic
+//    }
+//
+//    @Override
+//    public void onDisable() {
+//        // Plugin shutdown logic
+
+
     CompletableFuture<Boolean> has(UUID uuid);
 
     CompletableFuture<BankAPIResult<PlayerData>> addTable(OfflinePlayer player,String user,String pluginName);
@@ -23,7 +33,7 @@ public interface MiniCashBankAPI {
     CompletableFuture<BankAPIResult<PlayerData>> getStatus(UUID uuid,String user,String pluginName);
 
 
-    CompletableFuture<BankAPIResult<PlayerData>> edit(OfflinePlayer player, String user, String type,String action, int amount, String pluginName);
+    CompletableFuture<BankAPIResult<PlayerData>> edit(OfflinePlayer player, String user, AssetType type,ActionType action, int amount, String pluginName);
 
     CompletableFuture<BankAPIResult<PlayerData>> deposit(OfflinePlayer player, String user, int amount, String pluginName);
     CompletableFuture<BankAPIResult<PlayerData>> withdraw(OfflinePlayer player, String user, int amount, String pluginName);
@@ -37,9 +47,6 @@ public interface MiniCashBankAPI {
 
 
     CompletableFuture<BankAPIResult<PayResponseDTO>> pay(UUID fromUUID,UUID toUUID,String user, int amount, String pluginName);
-
-
-
 
 
 
