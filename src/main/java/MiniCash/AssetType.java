@@ -1,7 +1,13 @@
 package MiniCash;
 
+import java.util.Locale;
+
 public enum AssetType {
     EMONY,
     BANK,
-    POINT
+    POINT;
+
+    public String toKey() {
+        return this.name().toLowerCase(Locale.ROOT);
+    }
 }
