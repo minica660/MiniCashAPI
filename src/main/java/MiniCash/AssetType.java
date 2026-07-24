@@ -3,7 +3,7 @@ package MiniCash;
 import java.util.Locale;
 
 public enum AssetType {
-    EMONY,
+    EMONEY,
     BANK,
     POINT;
 
