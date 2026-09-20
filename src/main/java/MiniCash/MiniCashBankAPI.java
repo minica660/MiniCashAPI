@@ -29,7 +29,7 @@ public interface MiniCashBankAPI {
     CompletableFuture<BankAPIResult<Integer>> getEmoney(UUID uuid);
     CompletableFuture<BankAPIResult<Integer>> getBank(UUID uuid);
     CompletableFuture<BankAPIResult<Integer>> getPoint(UUID uuid);
-    CompletableFuture<BankAPIResult<MoneyLogPageResponseDTO>> getPlayerLogs(UUID playerUUID, int page, int size)
+    CompletableFuture<BankAPIResult<MoneyLogPageResponseDTO>> getPlayerLogs(UUID playerUUID, int page, int size);
     CompletableFuture<BankAPIResult<PlayerData>> getLog(UUID uuid,String user,String pluginName);
 
     CompletableFuture<BankAPIResult<PlayerData>> getStatus(UUID uuid,String user,String pluginName);
