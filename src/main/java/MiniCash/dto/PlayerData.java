@@ -20,10 +20,12 @@ public class PlayerData {
     private String message;
     @JsonProperty("isFrozen")
     private boolean isFrozen;
+    @JsonProperty("version")
+    private long version;
 
     public PlayerData(){}
 
-    public PlayerData(String playerName, String uuid, int emoney, int bank, int point, String message , boolean isFrozen) {
+    public PlayerData(String playerName, String uuid, int emoney, int bank, int point, String message , boolean isFrozen , long version) {
         this.playerName = playerName;
         this.uuid = uuid;
         this.emoney = emoney;
@@ -31,6 +33,7 @@ public class PlayerData {
         this.point = point;
         this.message = message;
         this.isFrozen = isFrozen;
+        this.version = version;
 
     }
 
@@ -59,4 +62,9 @@ public class PlayerData {
     public boolean isFrozen(){
         return isFrozen;
     }
+
+    public long getVersion(){
+        return  version;
+    }
+
 }
