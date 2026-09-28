@@ -18,7 +18,7 @@ public class PlayerData {
     private int point;
     @JsonProperty("message")
     private String message;
-    @JsonProperty("isFrozen")
+    @JsonProperty("frozen")
     private boolean isFrozen;
     @JsonProperty("version")
     private long version;
