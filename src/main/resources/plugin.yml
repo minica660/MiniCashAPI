@@ -1,0 +1,6 @@
+name: MiniCashBankAPI
+version: '$version'
+
+main: MiniCash.MiniCashBankAPI
+api-version: '1.21.11'
+load: POSTWORLD

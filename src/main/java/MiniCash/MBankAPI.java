@@ -8,6 +8,12 @@ import org.bukkit.OfflinePlayer;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * MapleBankのためのAPI
+ *
+ * @author MiniCash
+ * @version 1.0
+ */
 public interface MBankAPI {
 
 //    @Override
@@ -51,8 +57,8 @@ public interface MBankAPI {
      */
     CompletableFuture<BankAPIResult<PlayerData>> withdraw(OfflinePlayer player, String user , int amount , String pluginName , String reason);
 
-
     /**
+     * @hidden
      * 銀行のDeposit(入金)処理
      * @param player　対象プレイヤー
      * @param user　操作したユーザー名
@@ -64,6 +70,7 @@ public interface MBankAPI {
     CompletableFuture<BankAPIResult<PlayerData>> bankDeposit(OfflinePlayer player, String user, int amount, String pluginName, String reason);
 
     /**
+     * @hidden
      * 銀行のWithdraw(出金)処理
      * @param player　対象プレイヤー
      * @param user　操作したユーザー名
@@ -77,6 +84,7 @@ public interface MBankAPI {
 
 
     /**
+     * @hidden
      *  電子マネーから銀行へ
      *  銀行から電子マネーへ
      *  所持金を移行させます
@@ -90,17 +98,28 @@ public interface MBankAPI {
     CompletableFuture<BankAPIResult<PlayerData>> transfer(OfflinePlayer player , String user , AssetType goType , int amount , String pluginName);
 
 
+    /**
+     * @hidden
+     */
     CompletableFuture<BankAPIResult<PayResponseDTO>> pay(UUID fromUUID, UUID toUUID, String user, int amount, String pluginName);
 
 
-
+    /**
+     * @hidden
+     */
     CompletableFuture<BankAPIResult<MoneyLogPageResponseDTO>> getPlayerLogs(UUID playerUUID, int page, int size);
-
+    /**
+     * @hidden
+     */
     CompletableFuture<BankAPIResult<PlayerData>> getStatus(UUID uuid);
-
+    /**
+     * @hidden
+     */
     CompletableFuture<BankAPIResult<PlayerData>> setFreezeStatus(UUID playerUUID, boolean freeze , String user , String pluginName);
 
-
+    /**
+     * @hidden
+     */
     CompletableFuture<BankAPIResult<PlayerData>> edit(OfflinePlayer player, String user, AssetType type,ActionType action, int amount, String pluginName);
 
 
