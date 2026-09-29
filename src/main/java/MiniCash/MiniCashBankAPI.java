@@ -1,18 +1,44 @@
 package MiniCash;
 
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.server.ServiceRegisterEvent;
+import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class MiniCashBankAPI extends JavaPlugin {
+public class MiniCashBankAPI extends JavaPlugin implements Listener {
+
+    private static MBankAPI activeAPI = null;
 
     @Override
     public void onEnable() {
         // Plugin startup logic
+
+        getServer().getPluginManager().registerEvents(this, this);
+
+
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
 
+    }
+
+    @EventHandler
+    public void onServiceRegister(ServiceRegisterEvent event) {
+
+        if (event.getProvider().getService() == MBankAPI.class) {
+            if (event.getProvider().getPlugin() != this) {
+
+                activeAPI = (MBankAPI) event.getProvider().getProvider();
+                getLogger().info("経済システムの実装プラグイン（" + event.getProvider().getPlugin().getName() + "）の動的フックに成功しました。");
+            }
+        }
+    }
+
+    public static MBankAPI getAPI() {
+        return activeAPI;
     }
 
 }

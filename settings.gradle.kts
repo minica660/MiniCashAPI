@@ -1,1 +1,1 @@
-rootProject.name = "MiniCashBankAPI"
+rootProject.name = "MBankAPI"
