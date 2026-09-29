@@ -1,4 +1,4 @@
-name: MiniCashBankAPI
+name: MBankAPI
 version: '${version}'
 
 main: MiniCash.MiniCashBankAPI
