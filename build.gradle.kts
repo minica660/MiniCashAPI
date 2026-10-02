@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.minica660"
-version = "1.3.8-pre1"
+version = "1.3.8-pre2"
 
 repositories {
     mavenCentral()
@@ -24,26 +24,26 @@ java {
     toolchain.languageVersion = JavaLanguageVersion.of(21)
 }
 
-tasks {
-    runServer {
-        // Configure the Minecraft version for our task.
-        // This is the only required configuration besides applying the plugin.
-        // Your plugin's jar (or shadowJar if present) will be used automatically.
-        minecraftVersion("1.21.11")
-        jvmArgs("-Xms2G", "-Xmx2G")
-    }
-
-    processResources {
-        val props = mapOf("version" to version)
-        filesMatching("plugin.yml") {
-            expand(props)
-        }
-    }
-}
+//tasks {
+//    runServer {
+//        // Configure the Minecraft version for our task.
+//        // This is the only required configuration besides applying the plugin.
+//        // Your plugin's jar (or shadowJar if present) will be used automatically.
+//        minecraftVersion("1.21.11")
+//        jvmArgs("-Xms2G", "-Xmx2G")
+//    }
+//
+//    processResources {
+//        val props = mapOf("version" to version)
+//        filesMatching("plugin.yml") {
+//            expand(props)
+//        }
+//    }
+//}
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            from(components["java"]) // これが「Javaプロジェクトとして公開する」という指示です
+            from(components["java"])
         }
     }
 }
