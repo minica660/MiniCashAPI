@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.minica660"
-version = "1.3.8-pre2"
+version = "1.3.8"
 
 repositories {
     mavenCentral()

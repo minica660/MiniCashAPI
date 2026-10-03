@@ -93,6 +93,17 @@ public interface MBankAPI {
     /**
      * @hidden
      */
+    CompletableFuture<BankAPIResult<PlayerData>> givePoint(OfflinePlayer player , String user , int amount , String pluginName , String reason);
+
+    /**
+     * @hidden
+     */
+    CompletableFuture<BankAPIResult<PlayerData>> takePoint(OfflinePlayer player , String user , int amount , String pluginName , String reason);
+
+
+    /**
+     * @hidden
+     */
     CompletableFuture<BankAPIResult<PayResponseDTO>> pay(UUID fromUUID, UUID toUUID, String user, int amount, String pluginName);
 
 
